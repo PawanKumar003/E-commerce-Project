@@ -29,7 +29,7 @@ const Carousel = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="https://i.postimg.cc/PqRhs2sP/loja-virtual.jpg"
+              src="https://i.postimg.cc/fLQ1dv2r/mobile.jpg"
               className="d-block w-100"
               alt="..."
             />

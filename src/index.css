@@ -62,3 +62,119 @@ code {
   font-weight: 500;
   line-height: 1.5;
 }
+
+/* free shiping css */
+.free-shiping {
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 8rem;
+  background: #e2e2e2;
+}
+.shiping-item:first-child {
+  border-left: none;
+}
+.shiping-item {
+  display: flex;
+  border-left: 1px solid black;
+  padding-left: 2rem;
+}
+.shiping-text {
+  margin-left: 0.5rem;
+  line-height: 1;
+}
+
+.shiping-text p {
+  line-height: 1.3;
+  font-weight: 500;
+}
+.p-3 {
+  font-size: 1.25rem;
+  text-align: left;
+  padding: 0rem 1rem !important;
+}
+/* and free shiping css */
+
+/* start single Product css */
+.single-product {
+  text-align: left;
+  padding-left: 3rem;
+  width: 40%;
+}
+.single-product p {
+  margin-bottom: 0.8rem;
+}
+.delivery-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e4e2e2;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.delivery-status p {
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+}
+.stock-text {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #494949;
+  padding-bottom: 0.7rem;
+}
+.stock-text p {
+  margin-bottom: 0.5rem;
+}
+.stock-btn {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  padding-left: 0.1rem;
+  margin-bottom: 1rem;
+}
+.short-img {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+/* end single Product css */
+
+/* start footer css */
+.footer {
+  width: 100%;
+  height: 18rem;
+  background: #1a1533;
+  margin-top: 10rem;
+  color: #fff;
+  padding: 2rem 3rem;
+  display: flex;
+}
+.social-page {
+  font-size: 2rem;
+}
+.follow-page {
+  margin-left: 5rem;
+}
+.social-page span {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.subscribe-details input {
+  width: 13rem;
+  border-radius: 5px;
+  outline: none;
+  border: navajowhite;
+  height: 2.5rem;
+  padding-left: 0.5rem;
+}
+.subscribe-details button {
+  padding: 0.1rem 3.8rem;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  background-color: #7a84ff;
+  color: #ffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* end footer css */

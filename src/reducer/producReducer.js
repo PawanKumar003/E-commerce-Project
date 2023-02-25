@@ -25,8 +25,9 @@ const productReducer = (state, action) => {
       };
     case "GET_SINGLE_PRODUCT":
       return {
+        ...state,
         singleproduct: action.payload,
-        isLoading: false,
+        isSingleLoading: false,
       };
 
     case "SINGLE_ERROR":
