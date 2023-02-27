@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { BsFillCartCheckFill, BsFilePlus, BsFileMinus } from "react-icons/bs";
 import { useProductContext } from "./context/productContext";
@@ -7,6 +7,8 @@ import { GiBoxUnpacking, GiTakeMyMoney } from "react-icons/gi";
 import { MdOutlineSecurity } from "react-icons/md";
 
 const SingleProduct = () => {
+  const [img, setimg] = useState();
+  const [addClass, setAddClass] = useState(false);
   const { getsinbgleProduct, singleproduct, isSingleLoading } =
     useProductContext();
   const { id } = useParams();
@@ -25,6 +27,11 @@ const SingleProduct = () => {
     );
   }
 
+  const smallImg = (e) => {
+    setimg(e.target.src);
+    setAddClass(true);
+  };
+
   return (
     <div
       className="container overflow-hidden text-center"
@@ -33,19 +40,23 @@ const SingleProduct = () => {
       <div className="row gy-5">
         <div className="col-6">
           <img
-            src={singleproduct.thumbnail}
+            src={img ? img : singleproduct.thumbnail}
             alt={singleproduct.title}
-            style={{ width: "100%" }}
+            style={{ width: "100%", height: "350px" }}
           />
           <div className="short-img">
             {singleproduct.images?.map((image, inedx) => {
+              console.log(inedx, "index");
               return (
-                <div>
+                <div
+                  onClick={smallImg}
+                  className={img === image ? "activeClass" : ""}
+                >
                   <img
+                    inedx={inedx}
                     src={image}
                     alt="jhhjh"
-                    key={inedx}
-                    style={{ width: "100%" }}
+                    style={{ width: "159px", height: "125px" }}
                   />
                 </div>
               );
