@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import { BsFillCartCheckFill, BsFilePlus, BsFileMinus } from "react-icons/bs";
+import { BsFillCartCheckFill } from "react-icons/bs";
 import { useProductContext } from "./context/productContext";
 import { TbTruckDelivery } from "react-icons/tb";
 import { GiBoxUnpacking, GiTakeMyMoney } from "react-icons/gi";
@@ -8,7 +8,7 @@ import { MdOutlineSecurity } from "react-icons/md";
 
 const SingleProduct = () => {
   const [img, setimg] = useState();
-  const [addClass, setAddClass] = useState(false);
+  const [qnt, setQnt] = useState(1);
   const { getsinbgleProduct, singleproduct, isSingleLoading } =
     useProductContext();
   const { id } = useParams();
@@ -29,7 +29,13 @@ const SingleProduct = () => {
 
   const smallImg = (e) => {
     setimg(e.target.src);
-    setAddClass(true);
+  };
+
+  const qntIncrease = () => {
+    setQnt(qnt === 10 ? 10 : qnt + 1);
+  };
+  const qntDecrease = () => {
+    setQnt(qnt >= 2 ? qnt - 1 : 1);
   };
 
   return (
@@ -42,18 +48,17 @@ const SingleProduct = () => {
           <img
             src={img ? img : singleproduct.thumbnail}
             alt={singleproduct.title}
-            style={{ width: "100%", height: "350px" }}
+            style={{ width: "100%", height: "75%" }}
           />
           <div className="short-img">
             {singleproduct.images?.map((image, inedx) => {
-              console.log(inedx, "index");
               return (
                 <div
                   onClick={smallImg}
                   className={img === image ? "activeClass" : ""}
                 >
                   <img
-                    inedx={inedx}
+                    key={inedx}
                     src={image}
                     alt="jhhjh"
                     style={{ width: "159px", height: "125px" }}
@@ -117,11 +122,17 @@ const SingleProduct = () => {
             </p>
           </div>
           <div className="stock-btn">
-            <span style={{ paddingRight: "0.5rem", cursor: "pointer" }}>
+            <span
+              style={{ paddingRight: "0.5rem", cursor: "pointer" }}
+              onClick={qntDecrease}
+            >
               -{/* <BsFileMinus style={{ fontSize: "1.5rem" }} /> */}
             </span>
-            <span>1</span>
-            <span style={{ paddingLeft: "0.5rem", cursor: "pointer" }}>
+            <span>{qnt !== 0 ? qnt : qnt}</span>
+            <span
+              style={{ paddingLeft: "0.5rem", cursor: "pointer" }}
+              onClick={qntIncrease}
+            >
               +{/* /<BsFilePlus style={{ fontSize: "1.5rem" }} /> */}
             </span>
           </div>

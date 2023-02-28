@@ -21,7 +21,6 @@ const AppProvider1 = ({ children }) => {
     dispatch({ type: "SET_LOADING" });
     try {
       const allProducts = await AllProducts();
-      console.log(allProducts, "ddd");
       dispatch({ type: "MY_GET_API", payload: allProducts });
     } catch (error) {
       dispatch({ type: "API_ERROR" });
