@@ -55,14 +55,14 @@ const Home = () => {
         style={{ padding: "3rem 3.5rem 0rem" }}
       >
         <div className="row gy-5">
-          <div className="col-6">
+          <div className="col-6 p-d">
             <img
               src="https://i.postimg.cc/fLQ1dv2r/mobile.jpg"
               alt="xyz"
               style={{ width: "100%" }}
             />
           </div>
-          <div className="col-6">
+          <div className="col-6 p-d">
             <div className="p-3">
               <p>
                 iPhone 13. boasts an advanced dual-camera system that allows you

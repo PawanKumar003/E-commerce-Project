@@ -5,6 +5,7 @@ import { useProductContext } from "./context/productContext";
 import { TbTruckDelivery } from "react-icons/tb";
 import { GiBoxUnpacking, GiTakeMyMoney } from "react-icons/gi";
 import { MdOutlineSecurity } from "react-icons/md";
+import Star from "./components/Star";
 
 const SingleProduct = () => {
   const [img, setimg] = useState();
@@ -32,7 +33,7 @@ const SingleProduct = () => {
   };
 
   const qntIncrease = () => {
-    setQnt(qnt === 10 ? 10 : qnt + 1);
+    setQnt(qnt === singleproduct.stock ? singleproduct.stock : qnt + 1);
   };
   const qntDecrease = () => {
     setQnt(qnt >= 2 ? qnt - 1 : 1);
@@ -54,11 +55,11 @@ const SingleProduct = () => {
             {singleproduct.images?.map((image, inedx) => {
               return (
                 <div
+                  key={inedx}
                   onClick={smallImg}
                   className={img === image ? "activeClass" : ""}
                 >
                   <img
-                    key={inedx}
                     src={image}
                     alt="jhhjh"
                     style={{ width: "159px", height: "125px" }}
@@ -71,7 +72,9 @@ const SingleProduct = () => {
 
         <div className="col-6 single-product">
           <h1>{singleproduct.title}</h1>
-          <p>{singleproduct.rating}</p>
+          <p>
+            <Star star={singleproduct.rating} />
+          </p>
           <p>Mrp : {singleproduct.price}</p>
           <p>
             <span style={{ color: "blue" }}>Deal of the day: </span>

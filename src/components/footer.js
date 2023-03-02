@@ -37,7 +37,7 @@ const footer = () => {
         <br />
         <button>Subscribe</button>
       </div>
-      <div className="col-md-3 subscribe-details">
+      <div className="col-md-3 contact-details">
         <h4>Contact Us</h4>
         <p style={{ fontSize: "1.5rem" }}>+91-1234567890</p>
       </div>

@@ -8,12 +8,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Footer from "./components/footer";
 import Cart from "./Cart";
+import ClassComponent from "./ClassComponent";
 
 const App = () => {
   return (
     <div>
       <Router>
         <Header />
+
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
@@ -21,6 +23,7 @@ const App = () => {
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="/singleproduct/:id" element={<SingleProduct />} />
+          <Route exact path="/class" element={<ClassComponent />} />
         </Routes>
         <Footer />
       </Router>

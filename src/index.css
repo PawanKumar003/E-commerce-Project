@@ -35,6 +35,10 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+.feature-products :last-child {
+  margin-right: 0px !important;
 }
 .card img {
   width: 100%;
@@ -72,6 +76,7 @@ code {
   align-items: center;
   height: 8rem;
   background: #e2e2e2;
+  flex-wrap: wrap;
 }
 .shiping-item:first-child {
   border-left: none;
@@ -80,6 +85,7 @@ code {
   display: flex;
   border-left: 1px solid black;
   padding-left: 2rem;
+  flex-wrap: wrap;
 }
 .shiping-text {
   margin-left: 0.5rem;
@@ -113,6 +119,7 @@ code {
   border-bottom: 1px solid #e4e2e2;
   text-align: center;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 .delivery-status p {
   font-size: 0.8rem;
@@ -143,22 +150,26 @@ code {
 /* start footer css */
 .footer {
   width: 100%;
-  height: 18rem;
+  height: auto;
   background: #1a1533;
   margin-top: 10rem;
   color: #fff;
   padding: 2rem 3rem;
   display: flex;
+  flex-wrap: wrap;
 }
 .social-page {
   font-size: 2rem;
 }
 .follow-page {
-  margin-left: 5rem;
+  padding-left: 4rem;
 }
 .social-page span {
   margin-right: 1rem;
   cursor: pointer;
+}
+.subscribe-details {
+  padding-left: 1rem;
 }
 .subscribe-details input {
   width: 13rem;
@@ -257,6 +268,7 @@ code {
 
 .cart {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .products {
@@ -270,6 +282,7 @@ code {
   overflow: hidden;
   border: 1px solid silver;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .product:hover {
@@ -342,6 +355,7 @@ code {
   justify-content: space-between;
   margin-bottom: 30px;
   font-size: 20px;
+  flex-wrap: wrap;
 }
 
 .cart-total a {
@@ -400,3 +414,63 @@ code {
 }
 
 /* end cart page css */
+
+/* start media quary */
+@media only screen and (max-width: 768px) {
+  .free-shiping {
+    height: auto;
+    padding-left: 1rem;
+  }
+  .feature-products .col-sm-3 {
+    margin-right: 3rem !important;
+  }
+  .feature-products .col-sm-3:last-child {
+    margin-right: 0rem !important;
+  }
+  .p-d {
+    display: block;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .free-shiping {
+    height: auto;
+    padding-top: 2rem;
+    text-align: left;
+    display: inline-grid;
+  }
+  .shiping-item {
+    border: none;
+  }
+  .feature-products .col-sm-3 {
+    margin-right: 0rem !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .free-shiping {
+    height: auto;
+    padding-left: 1rem;
+  }
+  .p-d {
+    display: block !important;
+    width: 100% !important;
+    font-size: 1.25rem;
+  }
+}
+/* end media quary */
+
+/* start star rating css */
+.icon-style span {
+  padding-right: 0.2rem;
+}
+.icon-style span svg {
+  color: #ffad0e;
+}
+.icon-style p {
+  display: inline;
+  padding-left: 1rem;
+}
+
+/* end star rating css */
