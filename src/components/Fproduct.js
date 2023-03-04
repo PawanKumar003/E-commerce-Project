@@ -5,8 +5,6 @@ import { useProductContext } from "../context/productContext";
 const Fproduct = () => {
   const { isLoading, featureProduct } = useProductContext();
 
-  console.log(featureProduct);
-
   if (isLoading) {
     return (
       <div
@@ -16,10 +14,6 @@ const Fproduct = () => {
       </div>
     );
   }
-
-  // if (!featureProduct) {
-  //   return null;
-  // }
 
   return (
     <div className="">

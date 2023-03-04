@@ -6,8 +6,11 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { GiBoxUnpacking, GiTakeMyMoney } from "react-icons/gi";
 import { MdOutlineSecurity } from "react-icons/md";
 import Star from "./components/Star";
+import CartQytToggle from "./components/CartQytToggle";
+import { useCartContext } from "./context/CartContext";
 
 const SingleProduct = () => {
+  const { addToCart } = useCartContext();
   const [img, setimg] = useState();
   const [qnt, setQnt] = useState(1);
   const { getsinbgleProduct, singleproduct, isSingleLoading } =
@@ -72,9 +75,9 @@ const SingleProduct = () => {
 
         <div className="col-6 single-product">
           <h1>{singleproduct.title}</h1>
-          <p>
+          <div style={{ marginBottom: "0.6rem" }}>
             <Star star={singleproduct.rating} />
-          </p>
+          </div>
           <p>Mrp : {singleproduct.price}</p>
           <p>
             <span style={{ color: "blue" }}>Deal of the day: </span>
@@ -125,21 +128,13 @@ const SingleProduct = () => {
             </p>
           </div>
           <div className="stock-btn">
-            <span
-              style={{ paddingRight: "0.5rem", cursor: "pointer" }}
-              onClick={qntDecrease}
-            >
-              -{/* <BsFileMinus style={{ fontSize: "1.5rem" }} /> */}
-            </span>
-            <span>{qnt !== 0 ? qnt : qnt}</span>
-            <span
-              style={{ paddingLeft: "0.5rem", cursor: "pointer" }}
-              onClick={qntIncrease}
-            >
-              +{/* /<BsFilePlus style={{ fontSize: "1.5rem" }} /> */}
-            </span>
+            <CartQytToggle
+              qntIncrease={qntIncrease}
+              qntDecrease={qntDecrease}
+              qnt={qnt}
+            />
           </div>
-          <NavLink to="/cart">
+          <NavLink to="/cart" onClick={() => addToCart(singleproduct, qnt, id)}>
             <button className="button">
               Add to cart
               <BsFillCartCheckFill style={{ fontSize: "1.5rem" }} />

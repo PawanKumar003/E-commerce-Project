@@ -17,6 +17,7 @@ const initialState = {
 const AppProvider1 = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  // get app api data
   const getProducts = async () => {
     dispatch({ type: "SET_LOADING" });
     try {
@@ -27,6 +28,7 @@ const AppProvider1 = ({ children }) => {
     }
   };
 
+  // Get single api url
   const getsinbgleProduct = async (id) => {
     dispatch({ type: "SET_SINGLE_LOADING" });
     try {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Star from "./Star";
 
 const AllProducts = (props) => {
@@ -14,7 +14,9 @@ const AllProducts = (props) => {
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>
           <p className="card-text">{brand}</p>
-          <p className="">{<Star star={rating} />}</p>
+          <div className="" style={{ paddingBottom: "1rem" }}>
+            {<Star star={rating} />}
+          </div>
           <p className="">Price: &#8377;{price}</p>
           <NavLink to={`/singleproduct/${id}`} className="btn btn-primary">
             View Product

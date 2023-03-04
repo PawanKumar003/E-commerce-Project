@@ -40,6 +40,17 @@ code {
 .feature-products :last-child {
   margin-right: 0px !important;
 }
+.card:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+  box-shadow: #1a1533;
+  -webkit-box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 0.75);
+}
+.card {
+  transition: all 0.3s ease-out;
+}
 .card img {
   width: 100%;
 }
@@ -59,7 +70,7 @@ code {
   position: absolute;
   right: 4px;
   background: #e6e4e4;
-  width: 6rem;
+  width: 8rem;
   top: 4px;
   border-radius: 50px;
   text-align: center;
@@ -282,7 +293,6 @@ code {
   overflow: hidden;
   border: 1px solid silver;
   margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
 .product:hover {
@@ -474,3 +484,30 @@ code {
 }
 
 /* end star rating css */
+
+/* start search box css */
+
+.search-box {
+  width: 100%;
+  text-align: right;
+  padding: 0rem 5rem 2rem 0rem;
+  margin-top: -3rem;
+}
+.search-box input {
+  height: 2.3rem;
+  border-radius: 5px;
+  border: none;
+  outline: #00cdf5;
+  padding-left: 1rem;
+}
+.search-box button {
+  outline: none;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 5px;
+  background: #1086ff;
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+/* end search box css */

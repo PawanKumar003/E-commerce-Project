@@ -64,7 +64,7 @@ const Cart = () => {
                       cursor: "pointer",
                     }}
                   />
-                  <input value={addItem} name="" />
+                  <input defaultValue={addItem} name="" />
                   <FcPlus
                     onClick={incItem}
                     style={{

@@ -19,9 +19,6 @@ class ClassComponent extends React.Component {
     console.log("delete");
   }
 
-  //   getDerivedStateFromProps() {
-  //     console.log("get drive");
-  //   }
   render() {
     const incres = () => {
       this.setState({ add: this.state.add + 1 });
