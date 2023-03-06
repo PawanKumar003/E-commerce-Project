@@ -1,31 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BsHandbag } from "react-icons/bs";
-import { FcPlus, FcMinus } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { useCartContext } from "./context/CartContext";
+import CartItem from "./components/CartItem";
 
 const Cart = () => {
-  const [addItem, setAdditem] = useState(1);
-  const [addOneTimePrice, setAddOneTimePrice] = useState(1);
-  const addPrice = 1000;
+  const { cart } = useCartContext();
 
-  const removeItem = () => {
-    console.log("asdjfy");
-  };
-
-  const incItem = () => {
-    setAdditem(addItem >= 10 ? 10 : addItem + 1);
-  };
-  const decItem = () => {
-    setAdditem(addItem >= 2 ? addItem - 1 : 1);
-  };
-
-  const priceMutli = () => {
-    setAddOneTimePrice(addPrice * addItem);
-  };
-
-  useEffect(() => {
-    priceMutli();
-  }, [addItem]);
+  if (!cart) {
+    return null;
+  }
 
   return (
     <div className="cart-page">
@@ -37,58 +21,16 @@ const Cart = () => {
 
         <div className="cart">
           <div className="products">
-            <div className="product">
-              <img src="https://i.dummyjson.com/data/products/8/thumbnail.jpg" />
-
-              <div className="product-info">
-                <h3 className="product-name">New Shoes</h3>
-
-                <h4 className="product-price">{addOneTimePrice}</h4>
-
-                <h4 className="product-offer">50%</h4>
-
-                <p className="product-quantity">
-                  Qnt:{"    "}
-                  <FcMinus
-                    onClick={decItem}
-                    style={{
-                      fontSize: "2.5rem",
-                      paddingLeft: "0.5rem",
-                      fontSize: "2.5rem",
-                      borderRadius: "50px",
-                      background: "#4caf50",
-                      height: "30px",
-                      width: "30px",
-                      padding: "0",
-                      marginRight: "0.6rem",
-                      cursor: "pointer",
-                    }}
-                  />
-                  <input defaultValue={addItem} name="" />
-                  <FcPlus
-                    onClick={incItem}
-                    style={{
-                      fontSize: "2.5rem",
-                      paddingLeft: "0.5rem",
-                      cursor: "pointer",
-                    }}
-                  />
-                </p>
-
-                <p className="product-remove">
-                  <i className="fa fa-trash" aria-hidden="true"></i>
-
-                  <span className="remove">Remove</span>
-                </p>
-              </div>
-            </div>
+            {cart.map((curElm) => {
+              return <CartItem key={curElm.id} {...curElm} />;
+            })}
           </div>
 
           <div className="cart-total">
             <p>
               <span>Total Price</span>
 
-              <span>{addOneTimePrice}</span>
+              <span>1000</span>
             </p>
 
             <p>
