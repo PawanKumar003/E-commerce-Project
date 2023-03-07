@@ -21,16 +21,6 @@ const SingleProduct = () => {
     getsinbgleProduct(id);
   }, []);
 
-  if (isSingleLoading) {
-    return (
-      <div
-        style={{ textAlign: "center", padding: "0 0 2rem 0", fontSize: "2rem" }}
-      >
-        ...Loading
-      </div>
-    );
-  }
-
   const smallImg = (e) => {
     setimg(e.target.src);
   };
@@ -41,6 +31,16 @@ const SingleProduct = () => {
   const qntDecrease = () => {
     setQnt(qnt >= 2 ? qnt - 1 : 1);
   };
+
+  if (isSingleLoading) {
+    return (
+      <div
+        style={{ textAlign: "center", padding: "0 0 2rem 0", fontSize: "2rem" }}
+      >
+        ...Loading
+      </div>
+    );
+  }
 
   return (
     <div
@@ -65,7 +65,7 @@ const SingleProduct = () => {
                   <img
                     src={image}
                     alt="jhhjh"
-                    style={{ width: "159px", height: "125px" }}
+                    style={{ width: "100%", height: "125px" }}
                   />
                 </div>
               );

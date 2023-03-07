@@ -155,6 +155,7 @@ code {
   display: flex;
   justify-content: center;
   cursor: pointer;
+  width: 100%;
 }
 /* end single Product css */
 
@@ -511,3 +512,52 @@ code {
 }
 
 /* end search box css */
+
+/* Start contact page css */
+
+.ring {
+  border-top: red 1px solid;
+  height: 37px;
+  border: none;
+  outline: none;
+  border-bottom: solid 1px green;
+  border-radius: 5px;
+}
+
+.ring:focus::placeholder {
+  top: 0;
+  position: absolute;
+  font-size: 0.6rem;
+  transition: all 0.6s;
+}
+
+.ring {
+  padding-left: 0.5rem;
+}
+
+.text-md-left .btn {
+  margin-top: 2.2rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1px 32px;
+  margin-bottom: 2rem;
+}
+
+.bg-img {
+  background-image: url("https://i.postimg.cc/GpKjrB4F/istockphoto-178160053-612x612.jpg");
+  background-size: 100% 100%;
+}
+.contentDiv {
+  position: "absolute";
+}
+
+@media only screen and (max-width: 782px) {
+  .contentDiv {
+    position: "unset";
+  }
+  .bg-img {
+    width: 100%;
+  }
+}
+
+/* end contact page css */
