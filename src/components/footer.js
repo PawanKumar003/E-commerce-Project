@@ -4,7 +4,7 @@ import { BsInstagram, BsFacebook, BsYoutube, BsLinkedin } from "react-icons/bs";
 const footer = () => {
   return (
     <div className="footer">
-      <div className="col-md-3">
+      <div className="col-md-3 about-us">
         <h4>About us</h4>
         <p>
           What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing

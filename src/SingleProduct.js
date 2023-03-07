@@ -48,7 +48,7 @@ const SingleProduct = () => {
       style={{ marginTop: "4rem" }}
     >
       <div className="row gy-5">
-        <div className="col-6">
+        <div className="col-6 single-product-img">
           <img
             src={img ? img : singleproduct.thumbnail}
             alt={singleproduct.title}
