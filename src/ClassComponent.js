@@ -6,17 +6,17 @@ class ClassComponent extends React.Component {
     this.state = {
       add: 0,
     };
-    console.log("constructor");
+    console.log("constructor 1");
   }
   componentDidMount() {
-    console.log("didMount");
+    console.log("didMount 3");
   }
   componentDidUpdate() {
-    console.log("update");
+    console.log("update 5");
   }
 
   componentWillUnmount() {
-    console.log("delete");
+    console.log("delete 4 ");
   }
 
   render() {
@@ -26,7 +26,7 @@ class ClassComponent extends React.Component {
     };
     return (
       <div>
-        {console.log("render")}
+        {console.log("render 2")}
         hfjdhj gfdk hgkfhslkghf {this.state.add}
         <button onClick={incres}>addd</button>
       </div>

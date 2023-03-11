@@ -78,6 +78,30 @@ code {
   line-height: 1.5;
 }
 
+/* start category css */
+.category {
+  width: 15%;
+  height: 665px;
+  background: #000000;
+  color: #fff;
+}
+.category_item {
+  cursor: pointer;
+}
+
+.category_item:hover {
+  font-size: 1.2rem;
+  color: rgb(144, 58, 58);
+}
+.cate-dropdown {
+  width: 100%;
+  height: 1.8rem;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+}
+/* end category css */
+
 /* free shiping css */
 .free-shiping {
   justify-content: space-evenly;
@@ -215,7 +239,7 @@ code {
 }
 .subscribe-details button {
   width: 73%;
-  padding: 0.3rem 4.9rem;
+  padding: 0.3rem 0rem;
   font-size: 1.5rem;
   margin-top: 0.5rem;
   background-color: #7a84ff;
@@ -303,6 +327,7 @@ code {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 85%;
 }
 
 .allproduct img {
@@ -558,9 +583,9 @@ code {
   width: 100%;
   text-align: right;
   padding: 0rem 5rem 2rem 0rem;
-  margin-top: -3rem;
 }
 .search-box input {
+  width: 173px;
   height: 2.3rem;
   border-radius: 5px;
   border: none;

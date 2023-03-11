@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AllProducts from "./components/AllProducts";
 import Carousel from "./components/Carousel";
-import Search from "./components/Search";
+import Category from "./components/Category";
 import { useProductContext } from "./context/productContext";
 
 const Product = () => {
@@ -15,6 +15,23 @@ const Product = () => {
         .includes(e.target.value.toLowerCase());
     });
     setSearchItem(newData);
+  };
+
+  const categoryItem = (e) => {
+    const categoryData = products.filter((catItem) => {
+      return catItem.category
+        .toLowerCase()
+        .includes(
+          e.target.innerText === "Mobile"
+            ? "smartphone"
+            : e.target.innerText.toLowerCase()
+        );
+    });
+    setSearchItem(categoryData);
+  };
+
+  const clickAll = () => {
+    setSearchItem(products);
   };
 
   useEffect(() => {
@@ -35,14 +52,25 @@ const Product = () => {
     <div>
       <Carousel />
       <div className="main-allProduct">
-        <div className="search-box">
-          <Search changeHandler={changeHandler} />
-        </div>
-        l
-        <div className="flexBox">
-          {searchItem.map((AllItem) => (
-            <AllProducts {...AllItem} key={AllItem.id} />
-          ))}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            padding: " 0rem 2rem",
+          }}
+        >
+          <div className="category">
+            <Category
+              changeHandler={changeHandler}
+              categoryItem={categoryItem}
+              clickAll={clickAll}
+            />
+          </div>
+          <div className="flexBox">
+            {searchItem.map((AllItem) => (
+              <AllProducts {...AllItem} key={AllItem.id} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

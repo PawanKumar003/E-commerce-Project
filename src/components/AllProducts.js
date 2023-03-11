@@ -6,14 +6,18 @@ const AllProducts = (props) => {
   const { title, category, description, thumbnail, id, brand, rating, price } =
     props;
   return (
-    <div className="col-sm-3 mb-sm-4 me-5">
+    <div className="col-sm-3 mb-sm-4" style={{ marginLeft: "4rem" }}>
       <div className="card allproduct">
         <img src={thumbnail} alt={title} />
         <figcaption className="caption">{category}</figcaption>
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
+          <h5 className="card-title" style={{ fontSize: "bold" }}>
+            {title}
+          </h5>
           <p className="card-text">{description}</p>
-          <p className="card-text">{brand}</p>
+          <strong className="card-text" style={{ fontSize: "1rem" }}>
+            {brand}
+          </strong>
           <div className="" style={{ paddingBottom: "1rem" }}>
             {<Star star={rating} />}
           </div>
