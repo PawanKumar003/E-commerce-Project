@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import AllProducts from "./components/AllProducts";
-import Carousel from "./components/Carousel";
-import Category from "./components/Category";
-import { useProductContext } from "./context/productContext";
+import AllProducts from "../components/AllProducts";
+import Carousel from "../components/Carousel";
+import Category from "../components/Category";
+import { useProductContext } from "../context/productContext";
 
 const Product = () => {
   const { isLoading, products } = useProductContext();

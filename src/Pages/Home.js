@@ -1,6 +1,6 @@
 import React from "react";
-import Carousel from "./components/Carousel";
-import Fproduct from "./components/Fproduct";
+import Carousel from "../components/Carousel";
+import Fproduct from "../components/Fproduct";
 import { BsTruck } from "react-icons/bs";
 import { GiBoxUnpacking, GiTakeMyMoney } from "react-icons/gi";
 

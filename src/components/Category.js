@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search";
-import { useProductContext } from "../context/productContext";
 
 const Category = ({ changeHandler, categoryItem, clickAll }) => {
-  const { products } = useProductContext();
+  const [priceFilterVal, setPriceFilterVal] = useState(10);
 
-  if (!products) {
-    return null;
+  const priceFilter = (e)=>{
+    setPriceFilterVal(e.target.value)
   }
   return (
     <div style={{ padding: "1rem 1rem" }}>
@@ -18,14 +17,6 @@ const Category = ({ changeHandler, categoryItem, clickAll }) => {
       <p className="category_item" onClick={clickAll}>
         All
       </p>
-
-      {/* {products.map((curelm, index) => {
-        return (
-          <p className="category_item" key={index} onClick={categoryItem}>
-            {curelm.category.Set()}
-          </p>
-        );
-      })} */}
       <p className="category_item" onClick={categoryItem}>
         Mobile
       </p>
@@ -56,8 +47,8 @@ const Category = ({ changeHandler, categoryItem, clickAll }) => {
       </select>
 
       <h5 style={{ marginTop: "1.5rem" }}>Price</h5>
-      <span>rs. 5000</span>
-      <input type="range" id="points" name="points" min="0" max="10" />
+      <span>rs. {priceFilterVal}</span>
+      <input type="range" id="points" name="points" min="10" max="5000" onChange={priceFilter}/>
 
       <button
         className="btn"

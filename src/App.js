@@ -1,14 +1,15 @@
 import React from "react";
 import Header from "./components/header";
-import About from "./About";
-import Product from "./Product";
-import Contact from "./Contact";
-import SingleProduct from "./SingleProduct";
+import About from "./Pages/About";
+import Product from "./Pages/Product";
+import Contact from "./Pages/Contact";
+import SingleProduct from "./Pages/SingleProduct";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Home";
+import Home from "./Pages/Home";
 import Footer from "./components/footer";
-import Cart from "./Cart";
+import Cart from "./Pages/Cart";
 import ClassComponent from "./ClassComponent";
+import Caluclator from "./Caluclator";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="/singleproduct/:id" element={<SingleProduct />} />
           <Route exact path="/class" element={<ClassComponent />} />
+          <Route exact path="calculator" element={<Caluclator/>} />
         </Routes>
         <Footer />
       </Router>

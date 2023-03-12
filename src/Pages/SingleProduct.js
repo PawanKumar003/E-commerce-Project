@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { BsFillCartCheckFill } from "react-icons/bs";
-import { useProductContext } from "./context/productContext";
+import { useProductContext } from "../context/productContext";
 import { TbTruckDelivery } from "react-icons/tb";
 import { GiBoxUnpacking, GiTakeMyMoney } from "react-icons/gi";
 import { MdOutlineSecurity } from "react-icons/md";
-import Star from "./components/Star";
-import CartQytToggle from "./components/CartQytToggle";
-import { useCartContext } from "./context/CartContext";
+import Star from "../components/Star";
+import CartQytToggle from "../components/CartQytToggle";
+import { useCartContext } from "../context/CartContext";
 
 const SingleProduct = () => {
   const { addToCart } = useCartContext();
@@ -16,10 +16,6 @@ const SingleProduct = () => {
   const { getsinbgleProduct, singleproduct, isSingleLoading } =
     useProductContext();
   const { id } = useParams();
-
-  useEffect(() => {
-    getsinbgleProduct(id);
-  }, []);
 
   const smallImg = (e) => {
     setimg(e.target.src);
@@ -31,6 +27,10 @@ const SingleProduct = () => {
   const qntDecrease = () => {
     setQnt(qnt >= 2 ? qnt - 1 : 1);
   };
+
+  useEffect(() => {
+    getsinbgleProduct(id);
+  }, []);
 
   if (isSingleLoading) {
     return (

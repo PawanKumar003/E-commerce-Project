@@ -1,8 +1,8 @@
 import React from "react";
 import { BsHandbag } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { useCartContext } from "./context/CartContext";
-import CartItem from "./components/CartItem";
+import { useCartContext } from "../context/CartContext";
+import CartItem from "../components/CartItem";
 
 const Cart = () => {
   const { cart } = useCartContext();
