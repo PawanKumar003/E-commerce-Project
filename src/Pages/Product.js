@@ -5,7 +5,7 @@ import Category from "../components/Category";
 import { useProductContext } from "../context/productContext";
 
 const Product = () => {
-  const { isLoading, products } = useProductContext();
+  const { products } = useProductContext();
   const [searchItem, setSearchItem] = useState([]);
 
   const changeHandler = (e) => {
@@ -38,15 +38,15 @@ const Product = () => {
     setSearchItem(products);
   }, [products]);
 
-  if (isLoading) {
-    return (
-      <div
-        style={{ textAlign: "center", padding: "0 0 2rem 0", fontSize: "2rem" }}
-      >
-        ...Loading
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div
+  //       style={{ textAlign: "center", padding: "0 0 2rem 0", fontSize: "2rem" }}
+  //     >
+  //       Loading Item...
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
