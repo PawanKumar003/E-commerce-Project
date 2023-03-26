@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import Search from "./Search";
 
-const Category = ({ changeHandler, categoryItem, clickAll }) => {
-  const [priceFilterVal, setPriceFilterVal] = useState(10);
+const Category = ({
+  changeHandler,
+  categoryItem,
+  clickAll,
+  priceFilter,
+  priceFilterVal,
+}) => {
+  const [selectValue, setSelectValue] = useState();
 
-  const priceFilter = (e)=>{
-    setPriceFilterVal(e.target.value)
-  }
+  const onChangeDrop = (event) => {
+    const value = event.target.value;
+    setSelectValue(value);
+  };
+
   return (
     <div style={{ padding: "1rem 1rem" }}>
       <div className="search-box">
@@ -36,7 +44,7 @@ const Category = ({ changeHandler, categoryItem, clickAll }) => {
         Home-decoration
       </p>
       <h5 style={{ marginTop: "1.5rem" }}>Companies</h5>
-      <select className="cate-dropdown">
+      <select className="cate-dropdown" onChange={onChangeDrop}>
         <option className="cate-option">All</option>
         <option className="cate-option">Apple</option>
         <option className="cate-option">Samsung</option>
@@ -48,9 +56,17 @@ const Category = ({ changeHandler, categoryItem, clickAll }) => {
 
       <h5 style={{ marginTop: "1.5rem" }}>Price</h5>
       <span>rs. {priceFilterVal}</span>
-      <input type="range" id="points" name="points" min="10" max="5000" onChange={priceFilter}/>
+      <input
+        type="range"
+        id="points"
+        name="points"
+        min="0"
+        max="1749"
+        onChange={priceFilter}
+      />
 
       <button
+        onClick={clickAll}
         className="btn"
         style={{
           background: "#f89f38",

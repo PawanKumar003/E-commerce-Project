@@ -7,6 +7,7 @@ import { useProductContext } from "../context/productContext";
 const Product = () => {
   const { products } = useProductContext();
   const [searchItem, setSearchItem] = useState([]);
+  const [priceFilterVal, setPriceFilterVal] = useState(0);
 
   const changeHandler = (e) => {
     const newData = products.filter((dataItem) => {
@@ -29,9 +30,17 @@ const Product = () => {
     });
     setSearchItem(categoryData);
   };
+  const priceFilter = (e) => {
+    const filterRangeData = searchItem.filter((curElem) => {
+      return curElem.price >= e.target.value;
+    });
+    setSearchItem(filterRangeData);
+    setPriceFilterVal(e.target.value);
+  };
 
   const clickAll = () => {
     setSearchItem(products);
+    setPriceFilterVal(0);
   };
 
   useEffect(() => {
@@ -64,6 +73,8 @@ const Product = () => {
               changeHandler={changeHandler}
               categoryItem={categoryItem}
               clickAll={clickAll}
+              priceFilter={priceFilter}
+              priceFilterVal={priceFilterVal}
             />
           </div>
           <div className="flexBox">

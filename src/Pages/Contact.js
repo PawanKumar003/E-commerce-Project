@@ -63,6 +63,7 @@ const Contact = () => {
                       <label htmlFor="name"></label>
                       <input
                         type="email"
+                        required
                         className="ring form-control"
                         placeholder="Your email"
                         id="email"

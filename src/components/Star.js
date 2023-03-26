@@ -19,7 +19,7 @@ const Star = ({ star }) => {
   });
   return (
     <div className="icon-style">
-      {ratinStar}
+      {star.toFixed(1)} {ratinStar}
       <p>({Math.floor(Math.random() * 100 + 50)} Customer reviews)</p>
     </div>
   );
